@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="md-form input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-lg" type="button" (click)='onSubmit()'>Go!</button>
+      </span>
+      <input type="search" class="form-control" placeholder="Search for..." [(ngModel)]="userNameInput">
+    </div>
+    <div class="col-md-12 mb-12 d-flex align-items-stretch">                            
+      <div class="card" >                  
+        <!--Card image-->
+        <div class="view">
+          <img src="{{otherUserDetails.image}}" class="card-img-top"
+            alt="">
+          <a href="#">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h4 class="card-title">{{otherUserDetails.userName}}</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text"><strong>Who am I?</strong><br>{{otherUserDetails.briefDescription}}</p>
+          <p class="card-text">My public repositories: <span class="badge badge-primary badge-pill">{{otherUserDetails.myPublicRepos}}</span></p>
+        </div>    
+      </div>
+    <!--/.Card-->      
+    </div>
+  </div>
+</div>
