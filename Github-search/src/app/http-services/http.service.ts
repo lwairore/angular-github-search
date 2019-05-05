@@ -33,9 +33,18 @@ export class HttpService {
       this.myInfo.myReposUrl = response.repos_url;
       this.myInfo.myPublicRepos = response.public_repos;
       this.myInfo.fullName = response.name;
-      },)
+      resolve()
+      },error=>{
+        this.myInfo.userName = "";
+        this.myInfo.briefDescription = "";
+        this.myInfo.image = "";
+        this.myInfo.myReposUrl = "";
+        this.myInfo.myPublicRepos = 0;
+        this.myInfo.fullName = "";
+        reject(error);
+      })
     })
-
+    
 
   }
 
