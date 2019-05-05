@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-12 d-flex align-items-stretch">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Hello</p>
+          <a routerLink="/landing_page"><button class="btn btn-primary btn-sm">Home</button></a>
+
+
+          <div class="list-group card-text">
+            <button type="button" class="list-group-item list-group-item-action active">
+              My Repositories
+            </button>
+            <div *ngFor="let repo of httpService.repo; let i = index;">
+              <button type="button" class="list-group-item list-group-item-action">
+                <strong>{{httpService.repo[i].name}}</strong>
+                <br>
+                <em>{{httpService.repo[i].description}}</em>
+                <br>
+                <a href="{{httpService.repo[i].html_url}}">Github Repository</a>
+
+
+
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
