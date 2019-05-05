@@ -60,8 +60,9 @@ export class HttpService {
       public_repos: number;
       name: string;
     }
+    var userNameInput;
     let promise = new Promise((resolve, reject)=> {
-      this.http.get<sortOtherUsersDetails>(environment.myApiUrl).toPromise().then(response=> {
+      this.http.get<sortOtherUsersDetails>(`${environment.apiPartOneUrl}${userNameInput}${environment.apiPartThreeUrl}`).toPromise().then(response=> {
       this.otherUsersInfo.userName = response.login;
       this.otherUsersInfo.briefDescription = response.bio;
       this.otherUsersInfo.image = response.avatar_url;
