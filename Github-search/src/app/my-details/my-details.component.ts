@@ -12,6 +12,8 @@ export class MyDetailsComponent implements OnInit {
   constructor(public httpService: HttpService) { }
 
   ngOnInit() {
+    this.httpService.myDetails();
+    
   }
 
 }
