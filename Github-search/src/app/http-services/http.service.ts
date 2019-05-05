@@ -51,7 +51,7 @@ export class HttpService {
   }
 
   // This function will be responsible for building an ApiKey based on the user input
-  otherUsersDetails() {
+  otherUsersDetails(j) {
     interface sortOtherUsersDetails{
       login: string;
       bio:string;
@@ -60,7 +60,7 @@ export class HttpService {
       public_repos: number;
       name: string;
     }
-    var userNameInput;
+    var userNameInput = j;
     let promise = new Promise((resolve, reject)=> {
       this.http.get<sortOtherUsersDetails>(`${environment.apiPartOneUrl}${userNameInput}${environment.apiPartThreeUrl}`).toPromise().then(response=> {
       this.otherUsersInfo.userName = response.login;
