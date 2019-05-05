@@ -96,7 +96,11 @@ export class HttpService {
       license: any;
       forks: number;
     }
-
+    let promise = new Promise((resolve, reject)=>{
+      this.http.get<sortMyRepo>(environment.myRepoApiUrl).toPromise().then(response=> {
+        
+      })
+    })
 
   }
 
