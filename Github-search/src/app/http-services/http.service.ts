@@ -26,7 +26,14 @@ export class HttpService {
       name: string;
     }
     let promise = new Promise((resolve, reject)=> {
-      this.http.get<sortMyDetails>(environment.myApiUrl)
+      this.http.get<sortMyDetails>(environment.myApiUrl).toPromise().then(response=> {
+      this.myInfo.userName = response.login;
+      this.myInfo.briefDescription = response.bio;
+      this.myInfo.image = response.avatar_url;
+      this.myInfo.myReposUrl = response.repos_url;
+      this.myInfo.myPublicRepos = response.public_repos;
+      this.myInfo.fullName = response.name;
+      },)
     })
 
 
