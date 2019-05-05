@@ -9,7 +9,7 @@ import { HttpService } from '../http-services/http.service';
 })
 export class OtherUsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(public httpService:HttpService) { }
 
   ngOnInit() {
   }
