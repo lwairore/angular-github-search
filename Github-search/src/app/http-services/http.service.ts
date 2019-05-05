@@ -24,6 +24,11 @@ export class HttpService {
       public_repos: number;
       name: string;
     }
+    let promise = new Promise((resolve, reject)=> {
+      this.http.get<sortMyDetails>(environment.myApiUrl)
+    })
+
+
   }
 
 
