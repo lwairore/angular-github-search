@@ -8,10 +8,12 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
   myInfo: Users;
+  otherUsersInfo: Users
 
 
   constructor(public http:HttpClient) { 
     this.myInfo = new Users("","","",0,"","");
+    this.otherUsersInfo = new Users("","","",0,"","");
 
   }
 
@@ -44,7 +46,40 @@ export class HttpService {
         reject(error);
       })
     })
-    
+    return promise
+
+  }
+
+  // This function will be responsible for building an ApiKey based on the user input
+  otherUsersDetails() {
+    interface sortOtherUsersDetails{
+      login: string;
+      bio:string;
+      avatar_url: string;
+      repos_url: string;
+      public_repos: number;
+      name: string;
+    }
+    let promise = new Promise((resolve, reject)=> {
+      this.http.get<sortOtherUsersDetails>(environment.myApiUrl).toPromise().then(response=> {
+      this.myInfo.userName = response.login;
+      this.myInfo.briefDescription = response.bio;
+      this.myInfo.image = response.avatar_url;
+      this.myInfo.myReposUrl = response.repos_url;
+      this.myInfo.myPublicRepos = response.public_repos;
+      this.myInfo.fullName = response.name;
+      resolve()
+      },error=>{
+        this.myInfo.userName = "";
+        this.myInfo.briefDescription = "";
+        this.myInfo.image = "";
+        this.myInfo.myReposUrl = "";
+        this.myInfo.myPublicRepos = 0;
+        this.myInfo.fullName = "";
+        reject(error);
+      })
+    })
+    return promise
 
   }
 
