@@ -12,6 +12,8 @@ export class MyRepositoryComponent implements OnInit {
   constructor(public httpService: HttpService) { }
 
   ngOnInit() {
+    this.httpService.myRepo();
+    
   }
 
 }
