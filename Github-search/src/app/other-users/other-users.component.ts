@@ -8,9 +8,11 @@ import { HttpService } from '../http-services/http.service';
   providers: [HttpService],
 })
 export class OtherUsersComponent implements OnInit {
-
+  userNameInput:string;
   constructor(public httpService:HttpService) { }
-
+  onSubmit(k) {
+    this.httpService.otherUsersDetails(this.userNameInput);
+  }
   ngOnInit() {
   }
 
