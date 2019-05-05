@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http-services/http.service';
+import { Users } from '../classes/users';
 
 @Component({
   selector: 'app-other-users',
@@ -9,9 +10,11 @@ import { HttpService } from '../http-services/http.service';
 })
 export class OtherUsersComponent implements OnInit {
   userNameInput:string;
+  otherUserDetails:Users;
   constructor(public httpService:HttpService) { }
   onSubmit(k) {
     this.httpService.otherUsersDetails(this.userNameInput);
+    this.otherUserDetails = this.httpService.otherUsersInfo
   }
   ngOnInit() {
   }
