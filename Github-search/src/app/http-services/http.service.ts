@@ -84,6 +84,22 @@ export class HttpService {
 
   }
 
+  // Deals with my Repo
+  myRepo() {
+    interface sortMyRepo {
+      html_url: string;
+      description: string;
+      name: string;
+      created_at: Date;
+      updated_at: Date;
+      homepage: string;
+      license: any;
+      forks: number;
+    }
+
+
+  }
+
 
 
 
