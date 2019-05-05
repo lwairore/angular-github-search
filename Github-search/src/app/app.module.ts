@@ -5,15 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyDetailsComponent } from './my-details/my-details.component';
-import { OtherUsersComponent } from './other-users/other-users.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyDetailsComponent,
-    OtherUsersComponent,
+  
    
   ],
   imports: [
