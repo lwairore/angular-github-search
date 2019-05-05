@@ -9,7 +9,22 @@ export class HttpService {
   myInfo: Users;
 
 
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient) { 
+    this.myInfo = new Users("","","",0,"","");
+
+  }
+
+  // Deals with myDetails primarily
+  myDetails() {
+    interface sortMyDetails{
+      login: string;
+      bio:string;
+      avatar_url: string;
+      repos_url: string;
+      public_repos: number;
+      name: string;
+    }
+  }
 
 
 
