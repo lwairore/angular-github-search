@@ -62,20 +62,20 @@ export class HttpService {
     }
     let promise = new Promise((resolve, reject)=> {
       this.http.get<sortOtherUsersDetails>(environment.myApiUrl).toPromise().then(response=> {
-      this.myInfo.userName = response.login;
-      this.myInfo.briefDescription = response.bio;
-      this.myInfo.image = response.avatar_url;
-      this.myInfo.myReposUrl = response.repos_url;
-      this.myInfo.myPublicRepos = response.public_repos;
-      this.myInfo.fullName = response.name;
+      this.otherUsersInfo.userName = response.login;
+      this.otherUsersInfo.briefDescription = response.bio;
+      this.otherUsersInfo.image = response.avatar_url;
+      this.otherUsersInfo.myReposUrl = response.repos_url;
+      this.otherUsersInfo.myPublicRepos = response.public_repos;
+      this.otherUsersInfo.fullName = response.name;
       resolve()
       },error=>{
-        this.myInfo.userName = "";
-        this.myInfo.briefDescription = "";
-        this.myInfo.image = "";
-        this.myInfo.myReposUrl = "";
-        this.myInfo.myPublicRepos = 0;
-        this.myInfo.fullName = "";
+        this.otherUsersInfo.userName = "";
+        this.otherUsersInfo.briefDescription = "";
+        this.otherUsersInfo.image = "";
+        this.otherUsersInfo.myReposUrl = "";
+        this.otherUsersInfo.myPublicRepos = 0;
+        this.otherUsersInfo.fullName = "";
         reject(error);
       })
     })
