@@ -14,7 +14,7 @@ export class MyDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.httpService.myDetails();
-    this.myInfo = this.httpService.myInfo
+    this.myInfo = this.httpService.myInfo;
   }
 
 }

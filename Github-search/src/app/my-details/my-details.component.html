@@ -1,7 +1,7 @@
-
+<ng-progress></ng-progress>
 <div class="container">
   <div class="row"  >
-    <button class="btn btn-primary btn-lg" type="button" >Search Github users</button>
+    <!-- <a routerLink="/search"><button class="btn btn-primary btn-lg" type="button" >Search Github users</button></a> -->    
       <!-- Column -->
       <div class="col-md-12 mb-12 d-flex align-items-stretch">                      
         <div class="card" >              
@@ -19,9 +19,11 @@
             <!--Title-->
             <h4 class="card-title">{{myInfo.userName}}</h4>
             <hr>
+            <a routerLink="/my_repos"><button class="btn  btn-sm" type="button">My Repositories</button></a>            
             <!--Text-->
             <p class="card-text"><strong>Who am I?</strong><br>{{myInfo.briefDescription}}</p>
             <p class="card-text">My public repositories: <span class="badge badge-primary badge-pill">{{myInfo.myPublicRepos}}</span></p>
+            
           </div>
   
       </div>
@@ -30,5 +32,6 @@
     </div>
   </div>
 </div>
+
   
   

@@ -8,13 +8,15 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
   myInfo: Users;
-  otherUsersInfo: Users
+  otherUsersInfo: Users;
+  repo;
+  userNameInput;
 
 
   constructor(public http:HttpClient) { 
     this.myInfo = new Users("","","",0,"","");
     this.otherUsersInfo = new Users("","","",0,"","");
-
+    
   }
 
   // Deals with myDetails primarily
@@ -88,7 +90,7 @@ export class HttpService {
   myRepo() {
     interface sortMyRepo {
       html_url: string;
-      description: string;
+      description: any;
       name: string;
       created_at: Date;
       updated_at: Date;
@@ -98,14 +100,44 @@ export class HttpService {
     }
     let promise = new Promise((resolve, reject)=>{
       this.http.get<sortMyRepo>(environment.myRepoApiUrl).toPromise().then(response=> {
-        
-      })
+        this.repo = response;
+        resolve();
+      },
+      error=> {
+        console.log("Error occured")
+        reject(error);
+      }
+      )
     })
-
+    return promise
   }
 
 
-
-
+  otherUsersRepo(l) {
+    console.log(this.userNameInput)
+    interface otherUsersRepo {
+      html_url: string;
+      description: any;
+      name: string;
+      created_at: Date;
+      updated_at: Date;
+      homepage: string;
+      license: any;
+      forks: number;
+    }
+    var userNameInput = l;
+    let promise = new Promise((resolve, reject)=>{
+      this.http.get<otherUsersRepo>(`${environment.OtherRepoApi1Url}${userNameInput}${environment.OtherRepoApi2Url}`).toPromise().then(response=> {
+        this.repo = response;
+        resolve();
+      },
+      error=> {
+        console.log("Error occured")
+        reject(error);
+      }
+      )
+    })
+    return promise
+  }
 
 }

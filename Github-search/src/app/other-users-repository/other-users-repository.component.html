@@ -1,10 +1,19 @@
+<ng-progress></ng-progress>
 <div class="container">
   <div class="row">
+    <div class="md-form input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-lg" type="button" (click)='onSubmit()'>Go!</button>
+      </span>
+
+      <input type="search" class="form-control" placeholder="Search for a Github user repositories via username"
+        [(ngModel)]="userNameInput">
+    </div>
     <div class="col-md-12 mb-12 d-flex align-items-stretch">
       <div class="card">
         <div class="card-body">
           <p class="card-text">Hello</p>
-          <a routerLink="/landing_page"><button class="btn btn-primary btn-sm">Home</button></a>
+          <a routerLink="/search"><button class="btn btn-primary btn-sm">Back</button></a>
 
 
           <div class="list-group card-text">
@@ -15,7 +24,9 @@
               <button type="button" class="list-group-item list-group-item-action">
                 <strong>{{httpService.repo[i].name}}</strong>
                 <br>
-                <em>{{httpService.repo[i].description}}</em>
+                <em>{{httpService.repo[i].description}} </em>
+                <br>                
+                <em>Last upadated at: {{httpService.repo[i].updated_at}}</em>
                 <br>
                 <a href="{{httpService.repo[i].html_url}}">Github Repository</a>
 
