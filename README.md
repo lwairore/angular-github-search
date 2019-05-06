@@ -13,6 +13,10 @@ To search for a user globally across all of Github, type the name of an existing
 We use the [GitHub API](https://developer.github.com/v3/) to retrieve Github users information. This API allows 5,000 requests per hour with an API key, but only 60 requests per hour _without_ one. 
 
 ## BDD (Behaviour Driven Development)
+Behavour            |Input                                            | Output                                                                    |
+--------------------|-------------------------------------------------|---------------------------------------------------------------------------|
+Display user profile| Enter lwairore to form input to user input form | Displays username, image,fullname, descrption                              |
+Display repository  | Enter lwairore to repository form input         | Displays list of repositories,number of forks, actual repos github website |
 
 
 ## Previews
