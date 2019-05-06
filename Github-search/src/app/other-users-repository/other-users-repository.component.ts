@@ -12,9 +12,7 @@ export class OtherUsersRepositoryComponent implements OnInit {
   constructor(public httpService: HttpService) { }
 
   onSubmit(k) {
-    alert(this.userNameInput)
-    this.httpService.otherUsersRepo(this.userNameInput);
-    
+    this.httpService.otherUsersRepo(this.userNameInput);    
   }
   ngOnInit() {
   }
