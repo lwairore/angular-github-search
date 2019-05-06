@@ -11,7 +11,7 @@ export class OtherUsersRepositoryComponent implements OnInit {
   userNameInput:string;
   constructor(public httpService: HttpService) { }
 
-  onSubmit(k) {
+  onSubmit() {
     this.httpService.otherUsersRepo(this.userNameInput);    
   }
   ngOnInit() {

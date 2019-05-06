@@ -12,7 +12,7 @@ export class OtherUsersComponent implements OnInit {
   userNameInput:string;
   otherUserDetails:Users;
   constructor(public httpService:HttpService) { }
-  onSubmit(k) {    
+  onSubmit() {    
     this.httpService.otherUsersDetails(this.userNameInput);
     this.otherUserDetails = this.httpService.otherUsersInfo;
     // this.httpService.otherUsersRepo(this.userNameInput)
