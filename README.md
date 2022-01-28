@@ -18,10 +18,6 @@ Behavour            |Input                                            | Output  
 Display user profile| Enter lwairore to form input to user input form | Displays username, image,fullname, descrption                              |
 Display repository  | Enter lwairore to repository form input         | Displays list of repositories,number of forks, actual repos github website |
 
-
-## Previews
-**[Click here](https://lwairore.github.io/Quotes/)** to see the live site.
-
 ## Technologies Used
 1. HTML
 2. [Bootstrap core CSS](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css) 
